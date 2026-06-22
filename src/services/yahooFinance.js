@@ -34,10 +34,12 @@ const PERIOD_PARAMS = {
   '6M': { interval: '1d',  range: '6mo' },
 };
 
+const WORKER_URL = 'https://ticker-dashboard-proxy.edziukosiara.workers.dev';
+
 const PROXIES = [
-  (url) => `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`,
+  (url) => `${WORKER_URL}?url=${encodeURIComponent(url)}`,
   (url) => `https://corsproxy.io/?${encodeURIComponent(url)}`,
-  (url) => `https://thingproxy.freeboard.io/fetch/${url}`,
+  (url) => `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`,
 ];
 
 // Unwrap proxy envelope — allorigins wraps in { contents }, others return raw
