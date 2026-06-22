@@ -1,0 +1,40 @@
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+:root {
+  --bg: #202124;
+  --surface: #303134;
+  --surface-hover: #3c4043;
+  --border: #5f6368;
+  --text: #e8eaed;
+  --text-muted: #9aa0a6;
+  --green: #13522b;
+  --green-text: #81c995;
+  --red: #5c191a;
+  --red-text: #f28b82;
+  --blue: #8ab4f8;
+  --radius: 8px;
+  --radius-sm: 4px;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-mono: SFMono-Regular, Consolas, monospace;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* THE FIX: Prevents the React root container from stretching its contents */
+#root {
+  display: block;
+  width: 100%;
+}
+
+input, button { font-family: var(--font-body); }
+button { cursor: pointer; border: none; background: none; color: inherit; }
